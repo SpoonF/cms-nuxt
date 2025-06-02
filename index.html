@@ -1,0 +1,131 @@
+<style>
+    body {
+        overflow: hidden;
+    }
+    img {
+        max-width: 100%;
+        user-select: none;
+        object-fit: cover;
+        height: 80%;
+        transition: 0.8s ease-in-out;
+    }
+    input {
+        display: none;
+    }
+    label {
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+    .gellary {
+        display: flex;
+        justify-content: space-around;
+        gap: 2rem;
+        height: 100%;
+        padding: 6rem;
+        background-color: rgb(27, 27, 27);
+    }
+
+    .image-container input ~ label img {
+        width: 100px;
+        box-shadow: 0 0 100px #ffffff11;
+        border-radius: 2rem;
+    }
+    .image-container input:checked ~ label img {
+        width: 1300px;
+    }
+
+    .image-container input ~ label p {
+        position: absolute;
+        left: 3rem;
+        bottom: 2.4rem;
+        opacity: 0;
+
+        color: #fff;
+        font-weight: 600;
+        font-size: 2rem;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        transition: 0.5s ease;
+        white-space: nowrap;
+    }
+    .image-container input:checked ~ label p {
+        opacity: 1;
+    }
+</style>
+
+<div class="gellary">
+    <div class="image-container">
+        <input type="radio" name="gellary" id="gellary-1" />
+        <label for="gellary-1">
+            <img
+                src="file:///d:\Download\50th_Windows_Wallpapers\Microsoft_50th_Mahjong_Dark_4k.jpg"
+                alt=""
+                srcset=""
+            />
+            <p>Маракуя</p>
+        </label>
+    </div>
+    <div class="image-container">
+        <input type="radio" name="gellary" id="gellary-2" />
+        <label for="gellary-2">
+            <img
+                src="file:///d:\Download\50th_Windows_Wallpapers\Microsoft_50th_Mahjong_Light_4k.jpg"
+                alt=""
+                srcset=""
+            />
+            <p>Огурец</p>
+        </label>
+    </div>
+    <div class="image-container">
+        <input type="radio" name="gellary" id="gellary-3" checked />
+        <label for="gellary-3">
+            <img
+                src="file:///d:\Download\50th_Windows_Wallpapers\Microsoft_50th_Solitaire_Dark_4k.jpg"
+                alt=""
+                srcset=""
+            />
+            <p>Жигулёвское пиво</p>
+        </label>
+    </div>
+    <div class="image-container">
+        <input type="radio" name="gellary" id="gellary-4" />
+        <label for="gellary-4">
+            <img
+                src="file:///d:\Download\50th_Windows_Wallpapers\Microsoft_50th_Solitaire_Light_4k.jpg"
+                alt=""
+                srcset=""
+            />
+            <p>Кондебобер</p>
+        </label>
+    </div>
+    <div class="image-container">
+        <input type="radio" name="gellary" id="gellary-5" />
+        <label for="gellary-5">
+            <img
+                src="file:///d:\Download\50th_Windows_Wallpapers\Microsoft_50th_Tulips_Dark_4k.jpg"
+                alt=""
+                srcset=""
+            />
+            <p>Пьяный волк</p>
+        </label>
+    </div>
+</div>
+
+<script>
+    const radioList = document.getElementsByName("gellary");
+    const length = radioList.length - 1;
+
+    // for (const element of radioList) {
+    //     element.addEventListener("change", () => {
+    //         element.setAttribute("checked", "");
+    //     });
+    // }
+
+    let i = 0;
+    setInterval(() => {
+        radioList[i].checked = true;
+        i == length ? (i = 0) : i++;
+        console.log(i);
+    }, 3000);
+</script>
